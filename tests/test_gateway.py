@@ -1,5 +1,6 @@
 import asyncio
 import hashlib
+import os
 import json
 from pathlib import Path
 import shutil
@@ -7,6 +8,7 @@ import ssl
 import subprocess
 import tempfile
 import unittest
+from unittest.mock import patch
 
 try:
     from aiohttp import web, ClientSession, TCPConnector, ClientError
@@ -197,6 +199,20 @@ class GatewayTests(unittest.IsolatedAsyncioTestCase):
             self.assertEqual(r.status, 401)
         async with self.session.get(self.url + "/v1/models", headers=self.headers) as r:
             self.assertEqual((await r.json())["data"][0]["id"], "glm-5.3")
+        from sparkfleet.api import Client
+
+        with patch.dict(
+            os.environ,
+            {
+                "SPARKFLEET_CA_FILE": str(self.root / "ca.pem"),
+                "SPARKFLEET_CERT_FILE": str(self.root / "client.pem"),
+                "SPARKFLEET_KEY_FILE": str(self.root / "client.key"),
+            },
+        ):
+            client = Client(self.url + "/v1", self.token)
+            status, data, _ = await asyncio.to_thread(client.request, "/v1/models")
+            self.assertEqual(status, 200)
+            self.assertEqual(data["data"][0]["id"], "glm-5.3")
         self.policy["models"]["glm-5.3"]["enabled"] = False
         self.write_policy()
         async with self.session.get(self.url + "/v1/models", headers=self.headers) as r:
