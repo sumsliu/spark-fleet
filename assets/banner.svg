@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" role="img" aria-labelledby="title desc">
+<title id="title">SparkFleet</title><desc id="desc">Multi-node Spark inference: deploy, measure, improve, repeat.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#081321"/><stop offset="1" stop-color="#162941"/></linearGradient><linearGradient id="line"><stop stop-color="#43d8d2"/><stop offset="1" stop-color="#818cf8"/></linearGradient></defs>
+<rect width="1200" height="380" rx="24" fill="url(#bg)"/>
+<g fill="none" stroke="#ffffff" opacity=".035"><path d="M0 80h1200M0 140h1200M0 200h1200M0 260h1200M0 320h1200M720 0v380M780 0v380M840 0v380M900 0v380M960 0v380M1020 0v380M1080 0v380M1140 0v380"/></g>
+<text x="64" y="75" fill="#74e5de" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="3">OPEN INFERENCE · DGX SPARK</text>
+<text x="60" y="155" fill="#f3f7ff" font-family="Arial,sans-serif" font-size="68" font-weight="700" letter-spacing="-2">SparkFleet</text>
+<text x="64" y="207" fill="#c4d2e7" font-family="Arial,sans-serif" font-size="25">Deploy. Measure. Improve. Repeat.</text>
+<text x="64" y="252" fill="#8da5c4" font-family="Arial,sans-serif" font-size="18">DeepSeek TP4 · GLM TP8 · Long-context inference</text>
+<rect x="64" y="291" width="245" height="34" rx="17" fill="#43d8d2" fill-opacity=".12" stroke="#43d8d2" stroke-opacity=".3"/>
+<text x="85" y="313" fill="#94eee5" font-family="Arial,sans-serif" font-size="14">REPRODUCIBLE BY DESIGN</text>
+<g stroke="url(#line)" stroke-width="2" fill="none" opacity=".7"><path d="M830 115l160-35 115 90-30 115-180 20-95-100zM830 115l65 190M990 80l-95 225M1105 170l-305 35M1075 285L830 115"/></g>
+<g fill="#132d45" stroke="#68e2dc" stroke-width="2"><rect x="805" y="90" width="50" height="50" rx="10"/><rect x="965" y="55" width="50" height="50" rx="10"/><rect x="1080" y="145" width="50" height="50" rx="10"/><rect x="1050" y="260" width="50" height="50" rx="10"/><rect x="870" y="280" width="50" height="50" rx="10"/><rect x="775" y="180" width="50" height="50" rx="10"/></g>
+<g fill="#85e9e3"><circle cx="830" cy="115" r="6"/><circle cx="990" cy="80" r="6"/><circle cx="1105" cy="170" r="6"/><circle cx="1075" cy="285" r="6"/><circle cx="895" cy="305" r="6"/><circle cx="800" cy="205" r="6"/></g>
+</svg>

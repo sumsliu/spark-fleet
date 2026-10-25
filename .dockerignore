@@ -1,0 +1,14 @@
+.git
+.venv
+work
+private
+secrets
+cluster.json
+plan.json
+*.receipt.json
+*.key
+*.pem
+*.safetensors
+*.gguf
+dist
+build

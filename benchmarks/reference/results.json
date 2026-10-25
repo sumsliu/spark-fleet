@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "scope": "Sanitized historical aggregates from the source deployment; not fresh reproduction of this portable checkout",
+  "hardware": "DGX Spark / GB10 / SM121; DeepSeek TP4 and separate GLM TP8 fleets",
+  "exported_at": "2026-10-25",
+  "raw_traces_or_private_conversations_included": false,
+  "experiments": [
+    {
+      "id": "deepseek-prefix-retention-1024",
+      "fixture": "Approximately 25K synthetic input, 1024 generated tokens before repeat/append",
+      "repeat": {"cache_hit_before": 0, "cache_hit_after": 0.995, "seconds_before_approx": 10, "seconds_after_approx": 0.5},
+      "append_cache_hit_after": 0.936,
+      "different_question_same_system_cache_hit_after": 0.96,
+      "limitation": "Residency and stable-prefix workload specific; not a universal hit-rate promise"
+    },
+    {
+      "id": "deepseek-contention-v4",
+      "fixture": "One decode; approximately 105K cold input; six seconds later approximately 75K mostly cached request",
+      "warm_ttft_seconds": [40.63, 4.99],
+      "warm_longest_post_first_stall_seconds_after": 1.98,
+      "cold_alone_seconds": [45.85, 45.82],
+      "cold_contended_seconds": [45.73, 46.26],
+      "decode_request_total_seconds": [60.47, 53.13],
+      "limitation": "Single controlled scenario; cold contended request was about 1.2 percent slower in this probe"
+    },
+    {
+      "id": "deepseek-tail-v3-natural-eos",
+      "paired_cases": 12,
+      "weighted_decode_tps": [48.88758065, 51.08318964],
+      "paired_geometric_gain": 0.04563762,
+      "paired_ci95": [0.019218449, 0.072088368],
+      "long_140k_subset": {"pairs": 2, "decode_tps": [52.75758, 56.14176], "gain": 0.0642098},
+      "limitation": "Small workload-specific sample; 140K subset has only two pairs"
+    },
+    {
+      "id": "deepseek-tail-v3-c4-fixed",
+      "fixture": "Warm 32K input, fixed 768 output tokens, concurrency four",
+      "aggregate_tps": [85.70353, 92.77247],
+      "gain": 0.082481,
+      "limitation": "Aggregate throughput, not single-stream decode"
+    },
+    {
+      "id": "deepseek-other-natural-workload",
+      "fixture": "Different 24-prompt natural-EOS workload",
+      "arithmetic_mean_decode_tps": 62.27,
+      "weighted_decode_tps": 58.15,
+      "limitation": "Different cases and denominator; not a universal current speed or 100 t/s proof"
+    },
+    {
+      "id": "deepseek-engram-concurrent-rejected",
+      "micro_saved_ms_approx": 2.6,
+      "four_rank_round_gain_approx": 0.003,
+      "promoted": false,
+      "limitation": "Local savings absorbed by overlap/rank critical path; no stable deployment benefit established"
+    },
+    {
+      "id": "deepseek-parallel-prefix-unresolved",
+      "baseline_drift_approx": 0.075,
+      "promoted": false,
+      "limitation": "Reference drift exceeded claimed small benefit; diagnose before another candidate"
+    },
+    {
+      "id": "glm-home-api-long-input",
+      "date": "2026-10-25",
+      "synthetic_tokens": 139410,
+      "cold_seconds": 159.664,
+      "appended_warm_seconds": [0.972, 1.158],
+      "tool_fixture_tokens": 130259,
+      "tool_round_warm_seconds": [1.779, 1.140],
+      "remote_transport_warm_seconds": [2.689, 5.218, 2.968],
+      "remote_short_first_text_seconds": 0.925,
+      "output_budget_32768_accepted": true,
+      "literal_32768_token_output_stress_tested": false,
+      "limitation": "Completion wall times except explicitly marked first text; not a full 256K/32K stress certification"
+    }
+  ],
+  "network": {"200g_payload_newly_verified_by_this_export": false},
+  "portable_controller_fresh_gpu_qualification": false
+}

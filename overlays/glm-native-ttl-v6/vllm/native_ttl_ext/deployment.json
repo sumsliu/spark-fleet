@@ -1,0 +1,6 @@
+{
+  "schema": 2,
+  "identity": "glm53-fp8mla-mtp3-native-ttl-v6-20261022",
+  "capacity_tokens": 196608,
+  "max_requests": 32
+}

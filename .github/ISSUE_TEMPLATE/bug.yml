@@ -1,0 +1,26 @@
+name: Bug report
+description: A reproducible tooling, runtime, protocol or correctness problem
+body:
+  - type: markdown
+    attributes:
+      value: Please remove keys, private IPs, device identities and real conversations. A small synthetic reproducer is best.
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and exact versions
+      description: Spark count, GPU architecture, runtime commit/image digest, overlay manifest, model format, fabric type.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction and actual result
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result and sanitized evidence
+      description: Include the failed gate and error type. Do not attach credentials or raw user prompts.
+    validations:
+      required: true

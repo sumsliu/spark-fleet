@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "name": "glm-native-ttl-v6",
+  "status": "historically tested v6 source; portable packaging not GPU-requalified",
+  "runtime_family": "GLM NVFP4 FP8 MLA MTP3 compatible vLLM tree, fingerprint-locked",
+  "files": {
+    "vllm/entrypoints/anthropic/api_router.py": {
+      "sha256": "73c835c0df8ec275ef20189f92f1bf1945720a0abce8cd96181b751984e72365",
+      "reference_source_sha256": "0a0b2cc4c8f7ef9d5989b1159aa849cce438acebae1ed26b7317d6636542d602",
+      "license": "Apache-2.0",
+      "preimage_sha256": "ec7e52d096e82eb8a4818ce186c306050587c93c0d3cd0040f108c9f7db0512a",
+      "new_file": false
+    },
+    "vllm/entrypoints/anthropic/protocol.py": {
+      "sha256": "fc3b111c8d10742240eb610794a09bae01397651d2214f159ebcf3ad7c1e271a",
+      "reference_source_sha256": "07f502884b001d2d7ed10279a3cf809a9d45f9864169f15de2e65ec93c5f31ea",
+      "license": "Apache-2.0",
+      "preimage_sha256": "3286389dd36ee3f7c4fe44465cc4fbbbf64a7c527d5aabcfa9b585df05cf455c",
+      "new_file": false
+    },
+    "vllm/entrypoints/anthropic/serving.py": {
+      "sha256": "baa4a678ed216aed5cd2f92fc00e5728c03d5cf2bcace124b5c62e854c052833",
+      "reference_source_sha256": "690a4a7a1294ec6be54de3498a72ca05d6b603941b7b4603147f53f78bd75650",
+      "license": "Apache-2.0",
+      "preimage_sha256": "41b1eae6911bb66975bd5c9ceb507133d0b4349137347ffb4fddbbcb01707a33",
+      "new_file": false
+    },
+    "vllm/entrypoints/openai/chat_completion/serving.py": {
+      "sha256": "dcb68f0cd6c8cd4c529fabbe0299ff504ceb22b6538026fa63f78b1408901447",
+      "reference_source_sha256": "78899d380c8402807347169bfadb3901b5fdee74e3f66c371f5314855492aa6f",
+      "license": "Apache-2.0",
+      "preimage_sha256": "ea1f76074a9587c8054f54d30a6ba748b6a5fc4d90dd82c801504505c1da1f92",
+      "new_file": false
+    },
+    "vllm/native_ttl_ext/__init__.py": {
+      "sha256": "d9f54be0e3812bf8fb08772027df64c811ec6aa4c43631e74f8fb5aea1f74a74",
+      "reference_source_sha256": "3068cc43cb3bcc9f6e0ff79cb9399cbdaa79cdd426cfb0609b387248c6dddd91",
+      "license": "Apache-2.0",
+      "preimage_sha256": null,
+      "new_file": true
+    },
+    "vllm/native_ttl_ext/deployment.json": {
+      "sha256": "1210023fcbcde724eac2c0b5b9e2cbd6af915951b075027601217d3a27735f3a",
+      "reference_source_sha256": "1210023fcbcde724eac2c0b5b9e2cbd6af915951b075027601217d3a27735f3a",
+      "license": "Apache-2.0",
+      "preimage_sha256": null,
+      "new_file": true
+    },
+    "vllm/native_ttl_ext/native_ttl.py": {
+      "sha256": "4a9726198274159023842e72260e2549674a7ca655dad534badb4d41ea91d1a0",
+      "reference_source_sha256": "9e572b364e19da2c6890eb7e76cc79940697db30a559b3e16221be8943c76c65",
+      "license": "Apache-2.0",
+      "preimage_sha256": null,
+      "new_file": true
+    },
+    "vllm/native_ttl_ext/scheduler_ttl.py": {
+      "sha256": "c6769ba1d69e61693f64ca4de3afa75fefcad0067335d4d643aa97f0d7c6718f",
+      "reference_source_sha256": "55d862789882d8d9751b2c203761f7fc94ca92535e8597909490d3e3a8946fce",
+      "license": "Apache-2.0",
+      "preimage_sha256": null,
+      "new_file": true
+    },
+    "vllm/native_ttl_ext/thinking_budget.py": {
+      "sha256": "be4d31e5b5a6acddd5a7ca4a0505fce1f1c4bc62ed7fc6a90abcfb1046aab5b8",
+      "reference_source_sha256": "df6d81b74092dc4260d58ad64e72b81620f21b2f048d2668763fbe17e07a9169",
+      "license": "Apache-2.0",
+      "preimage_sha256": null,
+      "new_file": true
+    },
+    "vllm/native_ttl_ext/ttl_api.py": {
+      "sha256": "6bc36574eac413be042e338081860d0028c6587bad91367ade84a6bf60f6ebde",
+      "reference_source_sha256": "9213d118ee6fb09cf51577739b53bd3327716b4c86afe1ece81f85b6d256a17c",
+      "license": "Apache-2.0",
+      "preimage_sha256": null,
+      "new_file": true
+    },
+    "vllm/native_ttl_ext/ttl_protocol.py": {
+      "sha256": "7383ac665a940b9c4cf73e88f6e2d29865b75e9a9c16039890623c7df1264098",
+      "reference_source_sha256": "6d6409f54f4d289dd2dd0ab27547aa9532bfa45f3b75f2189a21ca65c8eedf92",
+      "license": "Apache-2.0",
+      "preimage_sha256": null,
+      "new_file": true
+    },
+    "vllm/native_ttl_ext/ttl_runtime.py": {
+      "sha256": "06cb7955baba3cba3761d74f0ff5f1ad316f86bfaf5b6462518a4d8e4c9ce739",
+      "reference_source_sha256": "090e35a08b77a3abc3b11a96d57dfd4698dde560375055c1cccb95861118cfc0",
+      "license": "Apache-2.0",
+      "preimage_sha256": null,
+      "new_file": true
+    },
+    "vllm/v1/core/block_pool.py": {
+      "sha256": "3524e1d8af4db5337c85b4a8d79481327e2a62996802f19c1378173b46a92176",
+      "reference_source_sha256": "8faff8c539f234afd51120976f6145270e49d516d32e8aa55ef5ef339c51bc34",
+      "license": "Apache-2.0",
+      "preimage_sha256": "34c2fd67148cecb7763ff49ad694a57073759b0fa67572a4270dc995b4acf8fc",
+      "new_file": false
+    },
+    "vllm/v1/core/sched/scheduler.py": {
+      "sha256": "67032ef7b497f786c5ad096a358340b89647b1497958d48d7a8b50401a09ea73",
+      "reference_source_sha256": "31f35a35f028d6f9824c9167ba7c648bd55d5d2fb0c5766213ce59f4c1b835e4",
+      "license": "Apache-2.0",
+      "preimage_sha256": "85a2b9c88fd1304de758a238ae67a7ad02269540623d416b6a0e62a286b932ea",
+      "new_file": false
+    },
+    "vllm/v1/engine/async_llm.py": {
+      "sha256": "424e89693bab3ef2fabdaad1504441d72e7fd666078ebcbce3ac2e0f0fd51c28",
+      "reference_source_sha256": "7ba4f5784aec71979861fa10f89441bcf7f2f351416286d88c2463593951c7d1",
+      "license": "Apache-2.0",
+      "preimage_sha256": "32ab1c7b43bfa7e5fcada335f49627d3c540a43bb8376b4845006792c3415fb4",
+      "new_file": false
+    },
+    "vllm/v1/engine/core.py": {
+      "sha256": "77bb0ea321c9643f90c264dc6f32758183ffc3bdf5aafbcf5577a44cd6df6921",
+      "reference_source_sha256": "7a0c3973d8a423edec8a71750f680ede582198dd0fca8d286e29777287b0fbfe",
+      "license": "Apache-2.0",
+      "preimage_sha256": "268bf40534a853812867ae8e80040f190983cb364b41182b55969aace20c93f5",
+      "new_file": false
+    }
+  }
+}

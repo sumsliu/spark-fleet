@@ -1,0 +1,22 @@
+SparkFleet
+Copyright 2026 SparkFleet contributors.
+
+The reference vLLM overlays derive from vLLM (Apache-2.0), copyright the
+vLLM contributors. Their existing file-level SPDX and copyright notices are
+retained. SparkFleet changes cover bounded native KV retention, protocol
+compatibility, contention-aware scheduling and deployment integration.
+
+The B12X dynamic MoE reference overlay derives from b12x 1.3.0
+(Apache-2.0), by Luke Alonso and contributors, local-inference-lab/b12x.
+SparkFleet's modified reference adds the tail-v3 zero-column specialization.
+
+DeepSeek native Spark bring-up builds on the MIT-licensed Tech2wild recipe:
+tonyd2wild/DeepSeek-V4.1-Flash-TP2-and-TP4-DGX-Sparks, at the documented
+reference commit. That repository is linked, not vendored here. Credit also
+belongs to its named contributors and their upstream kernel work.
+
+Other runtime dependencies (PyTorch, NCCL, FlashInfer, CUTLASS, CUDA, model
+weights, tokenizers and proprietary clients) retain their own licenses. No
+model weights, proprietary client binaries, CUDA binaries, login tokens or
+private device identities are distributed by this project. SparkFleet is an
+independent community project, not an NVIDIA, DeepSeek, Z.ai or Anthropic product.

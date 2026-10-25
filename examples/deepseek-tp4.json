@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "cluster": "my-spark",
+  "profile": "deepseek-tp4",
+  "runtime": {
+    "image": "SET_A_VALIDATED_IMAGE@sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "entrypoint": [
+      "vllm"
+    ],
+    "compatible_runtime_confirmed": false
+  },
+  "paths": {
+    "state": "/srv/sparkfleet",
+    "weights": "/srv/models/model",
+    "cache": "/srv/sparkfleet/cache",
+    "env_file": null
+  },
+  "network": {
+    "master_port": 29541,
+    "gid_index": 3,
+    "socket_interface": "SET_INTERFACE",
+    "hca": "SET_RDMA_DEVICE",
+    "rdma_devices": [
+      "/dev/infiniband"
+    ]
+  },
+  "serving": {
+    "port": 8000,
+    "host": "127.0.0.1",
+    "context": 262144,
+    "batch_tokens": 4096,
+    "max_sequences": 4
+  },
+  "guard": {
+    "warning_c": 85,
+    "trip_c": 90,
+    "abort_c": 85,
+    "memory_floor_gib": 8,
+    "poll_seconds": 2,
+    "max_missed_seconds": 15
+  },
+  "mounts": [],
+  "nodes": [
+    {
+      "name": "spark-01",
+      "ssh": "operator@192.0.2.11",
+      "data_ip": "198.51.100.11"
+    },
+    {
+      "name": "spark-02",
+      "ssh": "operator@192.0.2.12",
+      "data_ip": "198.51.100.12"
+    },
+    {
+      "name": "spark-03",
+      "ssh": "operator@192.0.2.13",
+      "data_ip": "198.51.100.13"
+    },
+    {
+      "name": "spark-04",
+      "ssh": "operator@192.0.2.14",
+      "data_ip": "198.51.100.14"
+    }
+  ]
+}

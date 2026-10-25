@@ -1,0 +1,24 @@
+name: Reproduction / benchmark contribution
+description: Help turn one reference deployment into independently reproduced recipes
+body:
+  - type: textarea
+    id: setup
+    attributes:
+      label: Hardware and runtime fingerprint
+      description: Nodes, RAM, NVMe, switch/link topology, image/runtime revisions, quantization, overlay hashes.
+    validations:
+      required: true
+  - type: textarea
+    id: workload
+    attributes:
+      label: Workload and measurement definitions
+      description: Context tokens, output budget and actual output, concurrency, cold/warm state, EOS policy, repetitions, TTFT versus total throughput.
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: A/B/recheck results, correctness and thermal limits
+      description: Share sanitized structured reports and failed experiments too. Aggregate throughput is not single-stream speed.
+    validations:
+      required: true
